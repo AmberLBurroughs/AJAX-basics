@@ -10,15 +10,19 @@
     // event is triggered every time the readyState changes
     xhr.onreadystatechange = function () {
       //check if the response is back and page load fine
-      if(xhr.readyState === 4 && xhttp.status == 200){
-        // show content once page ready
-        document.getElementById('ajax').innerHTML = xhr.responseText;
+      if (xhr.readyState === 4) {
+        if (xhr.status == 200) {
+          // show content once page ready
+          document.getElementById('ajax').innerHTML = xhr.responseText;
+        } else {
+          alert(xhr.statusText);
+        }
       }
     };
     // request for content to be shown
     xhr.open('GET', 'sidebar.html');
     //button click send request then hide button
-    function SENDAJAX(){
+    function SENDAJAX() {
       xhr.send();
       document.getElementById('load').style.display = "none";
     }
