@@ -17,5 +17,5 @@ employeesRequest.onreadystatechange = function () {
   }
 };
 
-employeesRequest.open('GET', 'data/employees.json');
+employeesRequest.open('GET', '..data/employees.json');
 employeesRequest.send();
